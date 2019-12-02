@@ -1,5 +1,4 @@
 import React from "react"
-import { favorite_border } from "@material-ui/icons"
 
 const Card = props => {
 	console.log("props offer is ", props.offer)
@@ -8,7 +7,21 @@ const Card = props => {
 		<div className="card-item">
 			<div className="card-item--favorite">
 				<img src={props.offer.thumbnail} />
-				<favorite_border />
+				<div className="card-item--icon">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="18"
+						height="18"
+						fill="none"
+						stroke="#E80D6E"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						strokeWidth="1.5"
+						viewBox="0 0 24 24"
+					>
+						<path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
+					</svg>
+				</div>
 			</div>
 			<div className="card-item-info">
 				<h4>{props.offer.name}</h4>

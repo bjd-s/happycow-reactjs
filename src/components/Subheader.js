@@ -1,5 +1,6 @@
 import React from "react"
 import BackgroundImg from "../img/bg.home.large.monday.jpg"
+import SearchIcon from "@material-ui/icons/Search"
 
 const Subheader = () => {
 	return (
@@ -10,10 +11,17 @@ const Subheader = () => {
 				<div id="subheader-item--search">
 					<h1>Find Vegan Restaurants Nearby</h1>
 
-					<input
-						type="text"
-						placeholder="Search for city, or zipcode"
-					></input>
+					<div id="subheader-item--input">
+						<input
+							type="text"
+							placeholder="Search for city, or zipcode"
+						></input>
+						<div id="subheader-item--icon">
+							<SearchIcon
+								style={{ color: "#FFFFFF" }}
+							></SearchIcon>
+						</div>
+					</div>
 				</div>
 			</div>
 

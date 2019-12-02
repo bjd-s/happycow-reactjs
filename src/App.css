@@ -76,13 +76,31 @@ header p {
 	margin-bottom: 20px;
 }
 
-#subheader-item--search input {
+#subheader-item--input {
+	position: relative;
+}
+
+#subheader-item--input input {
 	width: 60vw;
 	height: 50px;
 	padding: 5px 20px;
 	border-radius: 25px;
 	border: none;
 	font-size: 16px;
+}
+
+#subheader-item--icon {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	right: 10px;
+	top: 5px;
+	background-color: #9069cd;
+	border-radius: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
 }
 
 .subheader-wave {
@@ -97,7 +115,7 @@ header p {
 /* ---------- HOME CONTENT ---------- */
 
 .content {
-	margin-top: 110px;
+	margin-top: 30px;
 }
 
 /* ---------- CARD CONTENT ---------- */
@@ -114,6 +132,7 @@ header p {
 }
 
 .card-item--favorite {
+	position: relative;
 }
 
 .card-item--favorite img {
@@ -121,6 +140,22 @@ header p {
 	height: 175px;
 	object-fit: cover;
 	border-radius: 10px;
+}
+
+.card-item--icon {
+	position: absolute;
+	background-color: #ffffff;
+	width: 46px;
+	height: 46px;
+	border-radius: 23px;
+	top: 5px;
+	right: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card-item--icon svg {
 }
 
 .card-item-info h4 {
