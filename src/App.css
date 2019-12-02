@@ -1,22 +1,84 @@
-.App {
-  text-align: center;
+/* ---------- HEADER ---------- */
+
+header {
+	width: 100%;
+	height: 84px;
+	border-bottom: 4px solid #7c4ec4;
+	background-color: #fff;
+	padding: 0 20px;
 }
 
-.App-logo {
-  height: 40vmin;
+header img {
+	width: 220px;
+	margin-right: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header p {
+	font-size: 16px;
+	color: #666;
+	text-transform: capitalize;
+	font-weight: 800;
+	margin-top: 10px;
 }
 
-.App-link {
-  color: #09d3ac;
+#header-container,
+.header-item {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.left-item {
+	justify-content: flex-start;
+}
+
+.right-item {
+	justify-content: flex-end;
+}
+
+.left-item p:first-child::after {
+	display: inline-block;
+	content: "\203A";
+	margin-left: 7px;
+	transform: rotate(90deg);
+}
+
+/* ---------- SUBHEADER ---------- */
+
+#subheader-container {
+	width: 100%;
+	height: 320px;
+}
+
+#subheader-item {
+	position: relative;
+}
+
+#subheader-item img {
+	width: 100%;
+	object-fit: cover;
+}
+
+#subheader-item--search {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#subheader-item--search h1 {
+	color: #ffffff;
+	font-size: 36px;
+	font-weight: 800;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#subheader-item--search input {
+	width: 60vw;
+	height: 50px;
+	padding: 5px 20px;
+	border-radius: 25px;
+	border: none;
 }
