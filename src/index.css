@@ -2,6 +2,7 @@ body {
 	font-family: "Nunito", "Roboto", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	font-size: 16px;
 }
 
 code {
@@ -18,4 +19,8 @@ code {
 a {
 	text-decoration: none;
 	color: #000000;
+}
+
+input:focus {
+	outline: none;
 }
