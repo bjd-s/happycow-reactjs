@@ -48,7 +48,6 @@ header p {
 
 #subheader-container {
 	width: 100%;
-	height: 320px;
 	position: relative;
 }
 
@@ -58,6 +57,7 @@ header p {
 
 #subheader-item img {
 	width: 100%;
+	height: 320px;
 	object-fit: cover;
 }
 
@@ -106,16 +106,16 @@ header p {
 .subheader-wave {
 	position: absolute;
 	width: 100%;
-	bottom: 0px;
+	bottom: 0;
 	opacity: 1;
 	overflow: hidden;
-	height: 100px;
+	height: 30%;
 }
 
 /* ---------- HOME CONTENT ---------- */
 
 .content {
-	margin-top: 30px;
+	margin-top: 8%;
 }
 
 /* ---------- CARD CONTENT ---------- */

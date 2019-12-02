@@ -1,7 +1,34 @@
 import React from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons"
 
 const Card = props => {
-	console.log("props offer is ", props.offer)
+	const ratingStars = []
+	const ratingModulo = props.offer.rating % 1
+
+	for (let i = 0; i < 5; i++) {
+		if (i < props.offer.rating) {
+			ratingStars.push(
+				<FontAwesomeIcon icon={faStar} color="gold" fontSize={20} />
+			)
+		} else {
+			ratingStars.push(
+				<FontAwesomeIcon icon={faStar} color="grey" fontSize={20} />
+			)
+		}
+	}
+
+	if (ratingModulo !== 0) {
+		if (ratingStars[ratingStars.length - 1]) {
+			ratingStars.push(
+				<FontAwesomeIcon
+					icon={faStarHalfAlt}
+					color="gold"
+					fontSize={20}
+				/>
+			)
+		}
+	}
 
 	return (
 		<div className="card-item">
@@ -26,7 +53,7 @@ const Card = props => {
 			<div className="card-item-info">
 				<h4>{props.offer.name}</h4>
 				<span>{props.offer.adresse}</span>
-				<span>{props.offer.rating}</span>
+				<span>{ratingStars}</span>
 				<span>reviews</span>
 				<p>{props.offer.description}</p>
 			</div>
