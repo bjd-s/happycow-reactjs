@@ -1,9 +1,8 @@
 import React from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
-import Header from "./components/Header"
-import Subheader from "./components/Subheader"
-import CardGroup from "./components/CardGroup"
+import Home from "./containers/Home"
+import Location from "./containers/Location"
 
 import "./App.css"
 
@@ -11,16 +10,14 @@ const App = () => {
 	return (
 		<Router>
 			<>
-				<Header />
-
-				<Subheader />
-
-				<div className="content">
-					<CardGroup />
-				</div>
-
 				<Switch>
-					<Route exact path="/"></Route>
+					<Route exact path="/">
+						<Home />
+					</Route>
+
+					<Route path="/Location">
+						<Location />
+					</Route>
 				</Switch>
 			</>
 		</Router>

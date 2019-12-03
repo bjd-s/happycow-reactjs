@@ -6,12 +6,12 @@ const Card = props => {
 	const ratingStars = []
 	const ratingModulo = props.offer.rating % 1
 	const ratingRound = Math.ceil(props.offer.rating)
-	console.log(ratingRound)
 
 	for (let i = 0; i < 5; i++) {
 		if (ratingModulo !== 0 && i === ratingRound - 1) {
 			ratingStars.push(
 				<FontAwesomeIcon
+					key={i}
 					icon={faStarHalfAlt}
 					color="gold"
 					fontSize={20}
@@ -31,7 +31,7 @@ const Card = props => {
 				<FontAwesomeIcon
 					key={i}
 					icon={faStar}
-					color="grey"
+					color="#DBDBDB"
 					fontSize={20}
 				/>
 			)
@@ -41,7 +41,10 @@ const Card = props => {
 	return (
 		<div className="card-item">
 			<div className="card-item--favorite">
-				<img src={props.offer.thumbnail} />
+				<img
+					src={props.offer.thumbnail}
+					alt={"Photo de " + props.offer.name}
+				/>
 				<div className="card-item--icon">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
