@@ -1,21 +1,9 @@
-import React, { useState } from "react"
-import { useHistory } from "react-router-dom"
-
+import React from "react"
 import BackgroundImg from "../img/bg.home.large.monday.jpg"
-import SearchIcon from "@material-ui/icons/Search"
 
-const Subheader = () => {
-	const [input, setInput] = useState("")
-	let history = useHistory()
+import InputSearch from "./InputSearch"
 
-	const handleInput = () => {
-		if (input === "paris") {
-			history.push("/Location")
-		} else {
-			console.log("error")
-		}
-	}
-
+const Subheader = props => {
 	return (
 		<section id="subheader-container">
 			<div id="subheader-item">
@@ -23,23 +11,11 @@ const Subheader = () => {
 
 				<div id="subheader-item--search">
 					<h1>Find Vegan Restaurants Nearby</h1>
-
-					<div id="subheader-item--input">
-						<input
-							type="text"
-							placeholder="Search for city, or zipcode"
-							onChange={e => {
-								setInput(e.target.value)
-							}}
-							onKeyDown={handleInput}
-						></input>
-
-						<div id="subheader-item--icon">
-							<SearchIcon
-								style={{ color: "#FFFFFF" }}
-							></SearchIcon>
-						</div>
-					</div>
+					<InputSearch
+						styling="input-item"
+						input={props.input}
+						setInput={props.setInput}
+					/>
 				</div>
 			</div>
 

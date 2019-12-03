@@ -63,6 +63,7 @@ header p {
 
 #subheader-item--search {
 	position: absolute;
+	width: 100%;
 	top: 33%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -76,20 +77,37 @@ header p {
 	margin-bottom: 20px;
 }
 
-#subheader-item--input {
-	position: relative;
+.subheader-wave {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	opacity: 1;
+	overflow: hidden;
+	height: 30%;
 }
 
-#subheader-item--input input {
-	width: 60vw;
+/* ---------- INPUT SEARCH ---------- */
+
+.input-item {
+	position: relative;
+	width: 60%;
+	margin: 0 auto;
+}
+
+.location-input-item {
+	width: 94%;
+}
+
+.input-item input {
+	width: 100%;
 	height: 50px;
 	padding: 5px 20px;
 	border-radius: 25px;
-	border: none;
+	border: 1px solid #f5f6f4;
 	font-size: 16px;
 }
 
-#subheader-item--icon {
+.icon-item {
 	position: absolute;
 	width: 40px;
 	height: 40px;
@@ -103,15 +121,6 @@ header p {
 	cursor: pointer;
 }
 
-.subheader-wave {
-	position: absolute;
-	width: 100%;
-	bottom: 0;
-	opacity: 1;
-	overflow: hidden;
-	height: 30%;
-}
-
 /* ---------- HOME CONTENT ---------- */
 
 .content {
@@ -120,7 +129,7 @@ header p {
 
 /* ---------- CARD CONTENT ---------- */
 
-#card-container {
+.card-container {
 	display: flex;
 	justify-content: flex-start;
 	flex-wrap: wrap;
@@ -155,9 +164,6 @@ header p {
 	align-items: center;
 }
 
-.card-item--icon svg {
-}
-
 .card-item-info h4 {
 	color: #217b33;
 	font-size: 18px;
@@ -177,4 +183,20 @@ header p {
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	line-clamp: 3;
+}
+
+/* ---------- LOCATION ---------- */
+
+#location-container {
+	display: flex;
+	justify-content: center;
+}
+
+.location-item--left {
+	flex-basis: 50%;
+}
+
+.location-item--right {
+	flex-basis: 50%;
+	background-color: palevioletred;
 }
