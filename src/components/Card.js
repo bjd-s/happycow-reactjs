@@ -5,25 +5,33 @@ import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons"
 const Card = props => {
 	const ratingStars = []
 	const ratingModulo = props.offer.rating % 1
+	const ratingRound = Math.ceil(props.offer.rating)
+	console.log(ratingRound)
 
 	for (let i = 0; i < 5; i++) {
-		if (i < props.offer.rating) {
-			ratingStars.push(
-				<FontAwesomeIcon icon={faStar} color="gold" fontSize={20} />
-			)
-		} else {
-			ratingStars.push(
-				<FontAwesomeIcon icon={faStar} color="grey" fontSize={20} />
-			)
-		}
-	}
-
-	if (ratingModulo !== 0) {
-		if (ratingStars[ratingStars.length - 1]) {
+		if (ratingModulo !== 0 && i === ratingRound - 1) {
 			ratingStars.push(
 				<FontAwesomeIcon
 					icon={faStarHalfAlt}
 					color="gold"
+					fontSize={20}
+				/>
+			)
+		} else if (i < props.offer.rating) {
+			ratingStars.push(
+				<FontAwesomeIcon
+					key={i}
+					icon={faStar}
+					color="gold"
+					fontSize={20}
+				/>
+			)
+		} else {
+			ratingStars.push(
+				<FontAwesomeIcon
+					key={i}
+					icon={faStar}
+					color="grey"
 					fontSize={20}
 				/>
 			)

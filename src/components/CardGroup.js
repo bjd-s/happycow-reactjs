@@ -26,7 +26,7 @@ const CardGroup = () => {
 				<p>Chargement...</p>
 			) : (
 				<div id="card-container">
-					{restaurant.slice(0, 49).map((offer, index) => {
+					{restaurant.slice(0, 29).map((offer, index) => {
 						return <Card key={index} offer={offer} />
 					})}
 				</div>
