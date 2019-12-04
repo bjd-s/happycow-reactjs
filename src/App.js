@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import axios from "axios"
 
-import Header from "./components/Header"
-
 import Home from "./containers/Home"
 import Location from "./containers/Location"
 
@@ -30,8 +28,6 @@ const App = () => {
 	return (
 		<Router>
 			<>
-				<Header />
-
 				<Switch>
 					<Route exact path="/">
 						<Home

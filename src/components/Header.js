@@ -2,9 +2,9 @@ import React from "react"
 import { Link } from "react-router-dom"
 import Logo from "../img/logo-happycow.png"
 
-const Header = () => {
+const Header = props => {
 	return (
-		<header>
+		<header className={props.headerStyling}>
 			<div id="header-container">
 				<div className="header-item left-item">
 					<Link to={"/"}>
