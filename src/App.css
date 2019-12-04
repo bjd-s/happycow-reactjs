@@ -196,7 +196,22 @@ header p {
 	flex-basis: 50%;
 }
 
+.left-item--header p {
+	margin: 10px;
+}
+
 .location-item--right {
 	flex-basis: 50%;
 	background-color: palevioletred;
+}
+
+/* ---------- GEOLOCATION ---------- */
+
+#mapid {
+	width: 100%;
+	height: 100%;
+}
+
+.leaflet-container {
+	height: 100%;
 }

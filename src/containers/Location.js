@@ -1,7 +1,8 @@
-import React, { useState } from "react"
+import React from "react"
 
 import InputSearch from "../components/InputSearch"
 import Card from "../components/Card"
+import Geolocation from "../components/Geolocation"
 
 const Location = props => {
 	return (
@@ -36,7 +37,11 @@ const Location = props => {
 				</div>
 			</div>
 
-			<div className="location-item location-item--right"></div>
+			<div className="location-item location-item--right">
+				<div id="mapid">
+					<Geolocation />
+				</div>
+			</div>
 		</section>
 	)
 }

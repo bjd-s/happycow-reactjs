@@ -4,7 +4,6 @@ import Subheader from "../components/Subheader"
 import CardGroup from "../components/CardGroup"
 
 const Home = props => {
-	console.log(props.offer)
 	return (
 		<>
 			<Subheader input={props.input} setInput={props.setInput} />
