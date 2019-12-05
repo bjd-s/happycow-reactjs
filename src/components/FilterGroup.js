@@ -10,23 +10,13 @@ const FilterGroup = props => {
 		}
 	}
 
-	console.log(filterType)
-
 	return (
 		<div section="filter-container">
 			{props.isLoading ? (
 				<p>Chargement...</p>
 			) : (
 				<div className="filter-container">
-					{props.restaurant.slice(0, 29).map((offer, index) => {
-						return (
-							<Filter
-								key={index}
-								offer={offer}
-								restaurant={props.restaurant}
-							/>
-						)
-					})}
+					<Filter filterType={filterType} />
 				</div>
 			)}
 		</div>

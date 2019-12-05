@@ -4,7 +4,9 @@ const Filter = props => {
 	return (
 		<div className="filter-item">
 			<div className="filter-item">
-				<h4>{props.offer.type}</h4>
+				{props.filterType.map((type, index) => {
+					return <h4 key={index}>{type}</h4>
+				})}
 			</div>
 		</div>
 	)
