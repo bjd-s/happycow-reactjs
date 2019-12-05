@@ -15,9 +15,7 @@ const FilterGroup = props => {
 			{props.isLoading ? (
 				<p>Chargement...</p>
 			) : (
-				<div className="filter-container">
-					<Filter filterType={filterType} />
-				</div>
+				<Filter filterType={filterType} />
 			)}
 		</div>
 	)

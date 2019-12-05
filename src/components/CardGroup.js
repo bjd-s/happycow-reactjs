@@ -9,7 +9,7 @@ const CardGroup = props => {
 				<p>Chargement...</p>
 			) : (
 				<div className="card-container">
-					{props.restaurant.slice(0, 29).map((offer, index) => {
+					{props.restaurant.slice(0, 49).map((offer, index) => {
 						return <Card key={index} offer={offer} />
 					})}
 				</div>
