@@ -4,6 +4,7 @@ import Header from "../components/Header"
 import InputSearch from "../components/InputSearch"
 import Card from "../components/Card"
 import Geolocation from "../components/Geolocation"
+import FilterGroup from "../components/FilterGroup"
 
 const Location = props => {
 	return (
@@ -17,11 +18,14 @@ const Location = props => {
 							We found {props.restaurant.length} results for
 							{" " + props.input}
 						</p>
+
 						<InputSearch
 							styling="location-input-item"
 							input={props.input}
 							setInput={props.setInput}
 						/>
+
+						<FilterGroup restaurant={props.restaurant} />
 
 						<div id="location-item--wrapper">
 							{props.isLoading ? (

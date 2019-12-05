@@ -1,21 +1,27 @@
-import React from "react"
+import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
 import SearchIcon from "@material-ui/icons/Search"
 
 const InputSearch = props => {
+	const [checkInput, setCheckInput] = useState(false)
 	let history = useHistory()
 
 	const handleInput = () => {
-		if (props.input === "paris") {
-			history.push("/Location")
-		} else {
+		if (props.input.match(/[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/)) {
+			console.log("ERROR")
+			setCheckInput(true)
 			history.push("/")
+		} else {
+			if (props.input === "paris") {
+				history.push("/Location")
+			}
 		}
 	}
 
 	return (
 		<div className={props.styling + " input-item"}>
 			<input
+				className={checkInput ? "false-input" : null}
 				type="text"
 				placeholder="Search for city, or zipcode"
 				value={props.input}
