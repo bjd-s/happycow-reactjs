@@ -251,7 +251,7 @@ input.false-input {
 	margin-bottom: 30px;
 }
 
-.filter-item h4 {
+.filter-item button {
 	border: 1px solid #ececec;
 	border-radius: 25px;
 	padding: 8px 10px;
@@ -259,4 +259,9 @@ input.false-input {
 	max-height: 40px;
 	font-size: 14px;
 	color: #505050;
+}
+
+button.filter-selected-btn {
+	background-color: palevioletred;
+	color: #ffffff;
 }

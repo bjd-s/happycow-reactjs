@@ -25,7 +25,7 @@ const Location = props => {
 							setInput={props.setInput}
 						/>
 
-						<FilterGroup restaurant={props.restaurant} />
+						<FilterGroup filterType={props.filterType} />
 
 						<div id="location-item--wrapper">
 							{props.isLoading ? (
@@ -33,7 +33,7 @@ const Location = props => {
 							) : (
 								<div className="card-container">
 									{props.restaurant
-										.slice(0, 29)
+										.slice(0, 49)
 										.map((offer, index) => {
 											return (
 												<Card

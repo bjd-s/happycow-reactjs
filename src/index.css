@@ -19,8 +19,16 @@ code {
 a {
 	text-decoration: none;
 	color: #000000;
+	cursor: pointer;
 }
 
-input:focus {
+input:focus,
+button:focus {
 	outline: none;
+}
+
+button {
+	background-color: none;
+	border: none;
+	cursor: pointer;
 }
