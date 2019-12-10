@@ -24,8 +24,8 @@ const App = () => {
 			}
 		}
 		setRestaurant(response.data)
-		setIsLoading(false)
 		setFilterType(filterType)
+		setIsLoading(false)
 	}
 
 	useEffect(() => {
@@ -36,26 +36,19 @@ const App = () => {
 		<Router>
 			<>
 				<Switch>
-					<Route
-						exact
-						path="/"
-						component={props => (
-							<Home
-								{...props}
-								restaurant={restaurant}
-								setRestaurant={setRestaurant}
-								isLoading={isLoading}
-								input={input}
-								setInput={setInput}
-							/>
-						)}
-					/>
-
-					<Route
-						path="/Location"
-						component={props => (
+					<Route exact path="/">
+						<Home
+							restaurant={restaurant}
+							setRestaurant={setRestaurant}
+							isLoading={isLoading}
+							input={input}
+							setInput={setInput}
+						/>
+					</Route>
+					)} />
+					<Route path="/Location">
+						{!isLoading && (
 							<Location
-								{...props}
 								restaurant={restaurant}
 								setRestaurant={setRestaurant}
 								isLoading={isLoading}
@@ -64,7 +57,7 @@ const App = () => {
 								filterType={filterType}
 							/>
 						)}
-					/>
+					</Route>
 				</Switch>
 			</>
 		</Router>
