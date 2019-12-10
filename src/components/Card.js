@@ -40,7 +40,7 @@ const Card = props => {
 	}
 
 	return (
-		<Link to={"/Restaurant"}>
+		<Link to={"/Restaurant/" + props.offer.placeId}>
 			<div className="card-item">
 				<div className="card-item--favorite">
 					<img

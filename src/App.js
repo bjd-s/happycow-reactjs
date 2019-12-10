@@ -4,7 +4,7 @@ import axios from "axios"
 
 import Home from "./containers/Home"
 import Location from "./containers/Location"
-import Restaurant from "./containers/Restaurants"
+import Restaurant from "./containers/Restaurant"
 
 import "./App.css"
 
@@ -60,7 +60,7 @@ const App = () => {
 						)}
 					</Route>
 
-					<Route path="/Restaurant">
+					<Route path="/Restaurant/:id">
 						<Restaurant />
 					</Route>
 				</Switch>

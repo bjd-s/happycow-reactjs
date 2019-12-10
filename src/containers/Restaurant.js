@@ -3,7 +3,9 @@ import React from "react"
 const Restaurant = () => {
 	return (
 		<section id="restaurant-container">
-			<div></div>
+			<div>
+				<p>Page restaurant</p>
+			</div>
 		</section>
 	)
 }

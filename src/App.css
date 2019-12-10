@@ -148,7 +148,7 @@ input.false-input {
 	flex-wrap: wrap;
 }
 
-.card-item {
+.card-container a {
 	flex-basis: 270px;
 	margin: 0px 15px 35px;
 }
