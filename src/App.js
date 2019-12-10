@@ -4,6 +4,7 @@ import axios from "axios"
 
 import Home from "./containers/Home"
 import Location from "./containers/Location"
+import Restaurant from "./containers/Restaurants"
 
 import "./App.css"
 
@@ -45,7 +46,7 @@ const App = () => {
 							setInput={setInput}
 						/>
 					</Route>
-					)} />
+
 					<Route path="/Location">
 						{!isLoading && (
 							<Location
@@ -57,6 +58,10 @@ const App = () => {
 								filterType={filterType}
 							/>
 						)}
+					</Route>
+
+					<Route path="/Restaurant">
+						<Restaurant />
 					</Route>
 				</Switch>
 			</>
