@@ -1,12 +1,18 @@
 import React from "react"
+import Header from "../components/Header"
 
-const Restaurant = () => {
+const Restaurant = props => {
+	console.log(props)
 	return (
-		<section id="restaurant-container">
-			<div>
-				<p>Page restaurant</p>
-			</div>
-		</section>
+		<>
+			<Header />
+
+			<section id="restaurant-container">
+				<div>
+					<p>Page restaurant</p>
+				</div>
+			</section>
+		</>
 	)
 }
 

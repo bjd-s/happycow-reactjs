@@ -42,6 +42,7 @@ const App = () => {
 							restaurant={restaurant}
 							setRestaurant={setRestaurant}
 							isLoading={isLoading}
+							setIsLoading={setIsLoading}
 							input={input}
 							setInput={setInput}
 						/>
@@ -53,6 +54,7 @@ const App = () => {
 								restaurant={restaurant}
 								setRestaurant={setRestaurant}
 								isLoading={isLoading}
+								setIsLoading={setIsLoading}
 								input={input}
 								setInput={setInput}
 								filterType={filterType}
@@ -61,7 +63,10 @@ const App = () => {
 					</Route>
 
 					<Route path="/Restaurant/:id">
-						<Restaurant />
+						<Restaurant
+						// restaurant={restaurant}
+						// setRestaurant={setRestaurant}
+						/>
 					</Route>
 				</Switch>
 			</>

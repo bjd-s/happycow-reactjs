@@ -1,12 +1,53 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 
 import Header from "../components/Header"
 import InputSearch from "../components/InputSearch"
-import Card from "../components/Card"
 import Geolocation from "../components/Geolocation"
 import FilterGroup from "../components/FilterGroup"
 
 const Location = props => {
+	const [isFilter, setIsFilter] = useState(false)
+	const [filterRestaurant, setFilterRestaurant] = useState([])
+	const [filterOther, setFilterOther] = useState([])
+
+	useEffect(() => {
+		let filterRestaurantCopy = [...filterRestaurant]
+		let filterOtherCopy = [...filterOther]
+
+		for (let i = 0; i < props.filterType.length; i++) {
+			if (
+				props.filterType[i] === "vegan" ||
+				props.filterType[i] === "vegetarian" ||
+				props.filterType[i] === "veg-options"
+			) {
+				filterRestaurantCopy.push({
+					name: props.filterType[i],
+					isActive: false
+				})
+			} else {
+				filterOtherCopy.push({
+					name: props.filterType[i],
+					isActive: false
+				})
+			}
+		}
+		setFilterRestaurant(filterRestaurantCopy)
+		setFilterOther(filterOtherCopy)
+		props.setIsLoading(false)
+	}, [])
+
+	const handleRestaurant = (array, index) => {
+		let copyRestaurant = [...array]
+		copyRestaurant[index].isActive = !copyRestaurant[index].isActive
+		setFilterRestaurant(copyRestaurant)
+	}
+
+	const handleOther = (array, index) => {
+		let copyOther = [...array]
+		copyOther[index].isActive = !copyOther[index].isActive
+		setFilterOther(copyOther)
+	}
+
 	return (
 		<>
 			<Header headerStyling="header-position" />
@@ -25,26 +66,17 @@ const Location = props => {
 							setInput={props.setInput}
 						/>
 
-						<FilterGroup filterType={props.filterType} />
-
-						<div id="location-item--wrapper">
-							{props.isLoading ? (
-								<p>Chargement...</p>
-							) : (
-								<div className="card-container">
-									{props.restaurant
-										.slice(0, 49)
-										.map((offer, index) => {
-											return (
-												<Card
-													key={index}
-													offer={offer}
-												/>
-											)
-										})}
-								</div>
-							)}
-						</div>
+						<FilterGroup
+							isLoading={props.isLoading}
+							filterType={props.filterType}
+							filterRestaurant={filterRestaurant}
+							filterOther={filterOther}
+							handleRestaurant={handleRestaurant}
+							handleOther={handleOther}
+							restaurant={props.restaurant}
+							isFilter={isFilter}
+							setIsFilter={setIsFilter}
+						/>
 					</div>
 				</div>
 

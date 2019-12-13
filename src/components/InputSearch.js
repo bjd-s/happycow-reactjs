@@ -7,8 +7,7 @@ const InputSearch = props => {
 	let history = useHistory()
 
 	const handleInput = () => {
-		if (props.input.match(/[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/)) {
-			console.log("ERROR")
+		if (props.input.match(/[ !@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/)) {
 			setCheckInput(true)
 			history.push("/")
 		} else {

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Map, Marker, Popup, TileLayer } from "react-leaflet"
 
-//import "leaflet/dist/leaflet.css"
-
 const Geolocation = () => {
 	const [isLoading, setIsLoading] = useState(true)
 	const [latitude, setLatitude] = useState(48.8534)
